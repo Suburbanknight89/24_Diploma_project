@@ -70,7 +70,7 @@ public class WebTests extends TestBase{
 			open("https://www.vprok.ru/");
 		});
 
-		step("check Catalogue", () -> {
+		step("check that 'expensive if pack' lead to correct link", () -> {
 			$(".xfnew-header__catalog-button").click();
 					$(By.linkText("Упаковкой дешевле")).shouldHave(href("catalog/4924/upakovkoy-deshevle"));
 		});
@@ -90,7 +90,7 @@ public class WebTests extends TestBase{
 			open("https://www.vprok.ru/");
 		});
 
-		step("check Catalogue", () -> {
+		step("check the link lead to zoogoods", () -> {
 			$(".xfnew-header__catalog-button").click();
 			$(By.linkText("Зоотовары")).shouldHave(href("https://zoo.vprok.ru/"));
 			$(".xf-svg xfnew-header__logo-image--zoo-corner").shouldHave(text("Зоотовары"));
@@ -110,10 +110,10 @@ public class WebTests extends TestBase{
 			open("https://www.vprok.ru/");
 		});
 
-		step("check Catalogue", () -> {
+		step("search best for cats in zoo corner", () -> {
 			$(".xfnew-header__catalog-button").click();
 			$(By.linkText("Зоотовары")).click();
-			$(".xfnew-semiblocks__item-header").shouldHave(text("Лучшее для кошек"));
+			$(".xfnew-semiblocks__item-header-title").shouldHave(text("Лучшее для кошек"));
 		});
 	}
 
@@ -130,7 +130,7 @@ public class WebTests extends TestBase{
 				open("https://www.vprok.ru/");
 			});
 
-			step("check Catalogue", () -> {
+			step("search 'milk'", () -> {
 				$(byXpath("(//input[@name='search'])[2]")).val("молоко").pressEnter();
 				$("#ui-id-31 .xf-product-title__link").
 						shouldHave(text("Молоко"));
@@ -150,7 +150,7 @@ public class WebTests extends TestBase{
 			open("https://www.vprok.ru/");
 		});
 
-		step("check Catalogue", () -> {
+		step("fill in", () -> {
 			$(".xfnew-nav__dropdown-button").click();
 			$(byText("Регистрация Интернет-Магазин")).click();
 			$(byName("phone")).val("+9999999999");
