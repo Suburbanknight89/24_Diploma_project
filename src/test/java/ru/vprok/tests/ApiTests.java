@@ -6,6 +6,7 @@ import io.restassured.RestAssured;
 import org.junit.jupiter.api.*;
 import ru.vprok.allure.JiraIssue;
 import ru.vprok.allure.JiraIssues;
+import ru.vprok.allure.Layer;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
@@ -20,6 +21,7 @@ public class ApiTests {
 
 	@Test
 	@DisplayName("reqres.in tests create user")
+	@Layer("api")
 	@Story("Создание нового пользователя")
 	@Tags({@Tag("api")})
 	@Owner("ZaytsevE")
@@ -41,6 +43,7 @@ public class ApiTests {
 
 	@Test
 	@DisplayName("reqres.in tests get info")
+	@Layer("api")
 	@Story("Запрос пользовательских данных")
 	@Tags({@Tag("api")})
 	@Owner("ZaytsevE")
@@ -60,6 +63,7 @@ public class ApiTests {
 
 	@Test
 	@DisplayName("reqres.in tests support.url")
+	@Layer("api")
 	@Story("Проверка ответа в блоке support.Url")
 	@Tags({@Tag("api")})
 	@Owner("ZaytsevE")
@@ -77,6 +81,7 @@ public class ApiTests {
 
 	@Test
 	@DisplayName("reqres.in ussuccesfull user creation")
+	@Layer("api")
 	@Story("Неуспешное создание нового пользователя(негативный)")
 	@Tags({@Tag("api")})
 	@Owner("ZaytsevE")
@@ -95,6 +100,7 @@ public class ApiTests {
 
 	@Test
 	@DisplayName("reqres.in succesfull registration")
+	@Layer("api")
 	@Story("Успешное создание нового пользователя(негативный)")
 	@Tags({@Tag("api")})
 	@Owner("ZaytsevE")

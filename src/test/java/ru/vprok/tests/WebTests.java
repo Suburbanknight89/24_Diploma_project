@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import ru.vprok.allure.JiraIssue;
 import ru.vprok.allure.JiraIssues;
+import ru.vprok.allure.Layer;
 import ru.vprok.allure.Microservice;
 
 import static com.codeborne.selenide.Condition.*;
@@ -22,6 +23,7 @@ public class WebTests extends TestBase{
 
 	@Test
 	@DisplayName("Vprok.ru tests 1")
+	@Layer("web")
 	@Story("Отображение 'Товар недели' на главной странице")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
@@ -39,6 +41,7 @@ public class WebTests extends TestBase{
 
 	@Test
 	@DisplayName("Vprok.ru tests 2")
+	@Layer("web")
 	@Story("Отображение 'Суперцены недели' на главной странице")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
@@ -56,6 +59,7 @@ public class WebTests extends TestBase{
 
 	@Test
 	@DisplayName("Vprok.ru tests 3")
+	@Layer("web")
 	@Story("Проверка ссылки 'Упаковкой дешевле'")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
@@ -75,6 +79,7 @@ public class WebTests extends TestBase{
 
 	@Test
 	@DisplayName("Vprok.ru tests 4")
+	@Layer("web")
 	@Story("Проверка ссылки 'Зоотовары'")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
@@ -94,6 +99,7 @@ public class WebTests extends TestBase{
 
 	@Test
 	@DisplayName("Vprok.ru tests 5")
+	@Layer("web")
 	@Story("Проверка заголовка 'Зоотовары'")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
@@ -113,6 +119,7 @@ public class WebTests extends TestBase{
 
 		@Test
 		@DisplayName("Vprok.ru tests 6")
+		@Layer("web")
 		@Story("Проверка поиска по продукту 'молоко'")
 		@Microservice("Search")
 		@Tags({@Tag("web")})
@@ -132,6 +139,7 @@ public class WebTests extends TestBase{
 
 	@Test
 	@DisplayName("Vprok.ru tests 7")
+	@Layer("web")
 	@Story("Проверка отправки смс кода при регистрации нового клиетна")
 	@Microservice("Registration")
 	@Tags({@Tag("web")})
