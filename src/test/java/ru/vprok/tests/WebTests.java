@@ -80,20 +80,18 @@ public class WebTests extends TestBase{
 	@Test
 	@DisplayName("Vprok.ru tests 4")
 	@Layer("web")
-	@Story("Проверка ссылки 'Зоотовары'")
+	@Story("Проверка что в заголовках блока зоотовары есть корма для животных")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
 	@Owner("ZaytsevE")
 	@JiraIssues({@JiraIssue("HOMEWORK-250")})
 	void assertCatalogueLinkZoo() {
-		step("open https://www.vprok.ru/", () -> {
-			open("https://www.vprok.ru/");
+		step("open https://zoo.vprok.ru/", () -> {
+			open("https://zoo.vprok.ru/");
 		});
 
-		step("check the link lead to zoogoods", () -> {
-			$(".xfnew-header__catalog-button").click();
-			$(By.linkText("Зоотовары")).shouldHave(href("https://zoo.vprok.ru/"));
-			$(".xf-svg xfnew-header__logo-image--zoo-corner").shouldHave(text("Зоотовары"));
+		step("check the zoo corner contains feed in the headers", () -> {
+			$("#tns1-item1").shouldHave(text("корм"));
 		});
 	}
 
