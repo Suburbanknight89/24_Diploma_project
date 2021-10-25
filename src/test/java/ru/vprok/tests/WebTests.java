@@ -169,7 +169,5 @@ public class WebTests extends TestBase{
 				$(".xf-registration-pin__timer").shouldHave(text("Отправить"));
 			});
 
-
-		});
 	}
 }
