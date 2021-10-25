@@ -47,6 +47,17 @@ API
 
 ## Инструкция по запуску тестов
 
-Запуск тестов происходит через джобу в [Jenkins](https://jenkins.autotests.cloud/job/07-grach17-tinkoff/)
+Запуск тестов происходит через джобу в [Jenkins](https://jenkins.autotests.cloud/job/24_subu_vprok/)
 
-![Jenkins](./images/Jenkins.png)
+![Jenkins](src/test/resources/img/jobs_launch.PNG)
+
+### Запуск автотестов в Jenkins:
+[Jobs для запуска](https://jenkins.autotests.cloud/job/auto-tests-paragon/)
+### Параметры используемые при запуске тестов:
+* browser (default chrome)
+* browserVersion (default 89.0)
+* browserSize (default 1920x1080)
+* browserMobileView (mobile device name, for example iPhone X)
+* remoteDriverUrl (url address from selenoid or grid)
+* videoStorage (url address where you should get video)
+* threads (number of threads)
