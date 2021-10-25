@@ -98,7 +98,7 @@ public class WebTests extends TestBase{
 	@Test
 	@DisplayName("Vprok.ru tests 5")
 	@Layer("web")
-	@Story("Проверка заголовка 'Зоотовары'")
+	@Story("Проверка подзаголовка в категории 'Зоотовары'")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
 	@Owner("ZaytsevE")
@@ -113,8 +113,8 @@ public class WebTests extends TestBase{
 			$(By.linkText("Зоотовары")).click();
 		});
 
-			step("check that 'лучшее для кошек' contains in search results", () -> {
-				$(".xfnew-semiblocks__item-header-title").shouldHave(text("Лучшее для кошек"));
+			step("check that 'Хиты продаж' contains in search results", () -> {
+				$(".xf-main-page__header-wrapper").shouldHave(text("Хиты продаж"));
 		});
 	}
 
