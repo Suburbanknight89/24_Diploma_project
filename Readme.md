@@ -49,7 +49,9 @@ API
 
 Запуск тестов происходит через джобу в [Jenkins](https://jenkins.autotests.cloud/job/24_subu_vprok/)
 
-![Запуск job](src/test/resources/img/jobs_launch.PNG)
+![JENIKNS_LAUNCH](src\test\resources\img\JENIKNS_LAUNCH.PNG)
+
+
 
 ### Параметры используемые при запуске тестов:
 * browser (default chrome)
