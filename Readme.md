@@ -49,7 +49,7 @@ API
 
 Запуск тестов происходит через джобу в [Jenkins](https://jenkins.autotests.cloud/job/24_subu_vprok/)
 
-![JENIKNS_LAUNCH](src\test\resources\img\JENIKNS_LAUNCH.PNG)
+![JENKINS_LAUNCH](src\test\resources\img\JENIKNS_LAUNCH.PNG)
 
 
 
