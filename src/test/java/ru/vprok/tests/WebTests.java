@@ -111,7 +111,10 @@ public class WebTests extends TestBase{
 		step("search best for cats in zoo corner", () -> {
 			$(".xfnew-header__catalog-button").click();
 			$(By.linkText("Зоотовары")).click();
-			$(".xfnew-semiblocks__item-header-title").shouldHave(text("Лучшее для кошек"));
+		});
+
+			step("check that 'лучшее для кошек' contains in search results", () -> {
+				$(".xfnew-semiblocks__item-header-title").shouldHave(text("Лучшее для кошек"));
 		});
 	}
 
@@ -130,9 +133,13 @@ public class WebTests extends TestBase{
 
 			step("search 'milk'", () -> {
 				$(byXpath("(//input[@name='search'])[2]")).val("молоко").pressEnter();
-				$("#ui-id-31 .xf-product-title__link").
-						shouldHave(text("Молоко"));
 			});
+
+			step("check that 'молоко' contains in search results", () -> {
+					$("#ui-id-31 .xf-product-title__link").
+							shouldHave(text("Молоко"));
+			});
+
 		}
 
 	@Test
@@ -148,7 +155,7 @@ public class WebTests extends TestBase{
 			open("https://www.vprok.ru/");
 		});
 
-		step("fill in", () -> {
+		step("fill in fields", () -> {
 			$(".xfnew-nav__dropdown-button").click();
 			$(byText("Регистрация Интернет-Магазин")).click();
 			$(byName("phone")).val("+9999999999");
@@ -156,6 +163,11 @@ public class WebTests extends TestBase{
 			$(byName("email")).val("9999@9999.ru");
 			$(".xf-registration__btn").click();
 			$(".xf-registration-pin__timer").shouldHave(text("Отправить"));
+			});
+
+		step("check that countdown begins", () -> {
+				$(".xf-registration-pin__timer").shouldHave(text("Отправить"));
+			});
 
 
 		});
