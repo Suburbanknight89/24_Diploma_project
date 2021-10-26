@@ -22,9 +22,9 @@ import static io.qameta.allure.Allure.step;
 public class WebTests extends TestBase{
 
 	@Test
-	@DisplayName("Vprok.ru tests 1")
+	@DisplayName("Отображение 'Товар недели' на главной страниц")
 	@Layer("web")
-	@Story("Отображение 'Товар недели' на главной странице")
+	@Story("vprok.ru tests")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
 	@Owner("ZaytsevE")
@@ -40,9 +40,9 @@ public class WebTests extends TestBase{
 	}
 
 	@Test
-	@DisplayName("Vprok.ru tests 2")
+	@DisplayName("Отображение 'Суперцены недели' на главной странице")
 	@Layer("web")
-	@Story("Отображение 'Суперцены недели' на главной странице")
+	@Story("vprok.ru tests")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
 	@Owner("ZaytsevE")
@@ -58,9 +58,9 @@ public class WebTests extends TestBase{
 	}
 
 	@Test
-	@DisplayName("Vprok.ru tests 3")
+	@DisplayName("Проверка ссылки 'Упаковкой дешевле'")
 	@Layer("web")
-	@Story("Проверка ссылки 'Упаковкой дешевле'")
+	@Story("vprok.ru tests")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
 	@Owner("ZaytsevE")
@@ -78,9 +78,9 @@ public class WebTests extends TestBase{
 
 
 	@Test
-	@DisplayName("Vprok.ru tests 4")
+	@DisplayName("Проверка что в заголовках блока зоотовары есть подзаголовок 'лакомства для кошек'")
 	@Layer("web")
-	@Story("Проверка что в заголовках блока зоотовары есть подзаголовок 'лакомства для кошек'")
+	@Story("vprok.ru tests")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
 	@Owner("ZaytsevE")
@@ -96,9 +96,9 @@ public class WebTests extends TestBase{
 	}
 
 	@Test
-	@DisplayName("Vprok.ru tests 5")
+	@DisplayName("Проверка подзаголовка в категории 'Зоотовары'")
 	@Layer("web")
-	@Story("Проверка подзаголовка в категории 'Зоотовары'")
+	@Story("vprok.ru tests")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
 	@Owner("ZaytsevE")
@@ -119,9 +119,9 @@ public class WebTests extends TestBase{
 	}
 
 		@Test
-		@DisplayName("Vprok.ru tests 6")
+		@DisplayName("Проверка поиска по продукту 'молоко'")
 		@Layer("web")
-		@Story("Проверка поиска по продукту 'молоко'")
+		@Story("vprok.ru tests")
 		@Microservice("Search")
 		@Tags({@Tag("web")})
 		@Owner("ZaytsevE")
@@ -143,7 +143,7 @@ public class WebTests extends TestBase{
 		}
 
 	@Test
-	@DisplayName("Vprok.ru tests 7")
+	@DisplayName("vprok.ru tests")
 	@Layer("web")
 	@Story("Проверка отправки смс кода при регистрации нового клиетна")
 	@Microservice("Registration")
