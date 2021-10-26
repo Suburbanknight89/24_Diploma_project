@@ -80,7 +80,7 @@ public class WebTests extends TestBase{
 	@Test
 	@DisplayName("Vprok.ru tests 4")
 	@Layer("web")
-	@Story("Проверка что в заголовках блока зоотовары есть корма для животных")
+	@Story("Проверка что в заголовках блока зоотовары есть подзаголовок 'лакомства для кошек'")
 	@Microservice("Search")
 	@Tags({@Tag("web")})
 	@Owner("ZaytsevE")
