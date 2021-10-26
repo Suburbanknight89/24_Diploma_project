@@ -101,7 +101,7 @@ public class ApiTests {
 	@Test
 	@DisplayName("reqres.in succesfull registration")
 	@Layer("api")
-	@Story("Успешное создание нового пользователя(негативный)")
+	@Story("Успешное создание нового пользователя")
 	@Tags({@Tag("api")})
 	@Owner("ZaytsevE")
 	@JiraIssues({@JiraIssue("HOMEWORK-250")})

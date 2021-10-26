@@ -62,6 +62,7 @@ API
 
 ### Хранение тест-кейсов в Allure TestOps
 Дашборд
+
 ![Allure](src/test/resources/img/main_dashboard.PNG)
 Дашборд по видам тестов
 
@@ -76,9 +77,8 @@ API
 
 ![Allure](src/test/resources/img/tests.PNG)
 
-
-### Уведомления о завершении прогона автоетстов в Telegram
-![Telegram](src/test/resources/img/tgbot.PNG)
-
 ### Видео о прохождении тестов
 ![Selenoid](src/test/resources/img/381ea424ae9fd94501a1efc8ceff696b(1).gif)
+
+### Уведомления о завершении прогона автотестов в Telegram
+![Telegram](src/test/resources/img/tgbot.PNG)
