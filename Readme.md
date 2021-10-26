@@ -29,8 +29,7 @@ API
     "Неуспешное создание нового пользователя(негативный)"
     "Успешное создание нового пользователя(негативный)"
 
-
-### Запуск тестов:
+### Запуск тестов
 
 Локальный запуск:
 
@@ -45,9 +44,7 @@ API
     gradle clean test -Ddriver=remote
 
 
-### Запуск тестов
-
-Запуск тестов происходит через джобу в [Jenkins](https://jenkins.autotests.cloud/job/24_subu_vprok/build?delay=0sec)
+Запуск тестов через джобу в [Jenkins](https://jenkins.autotests.cloud/job/24_subu_vprok/build?delay=0sec)
 
 ### Параметры используемые при запуске тестов:
 ![JENKINS_PARAMS](src/test/resources/img/Jenkins_params.PNG)
@@ -56,7 +53,25 @@ API
 
 ![JENKINS_LAUNCH](src/test/resources/img/JENKINS_LAUNCH.PNG)
 
-### Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-250)  :
+### Отчёт в Allure Report
+![Allure](src/test/resources/img/allure_report.PNG)
+
+### Интеграция [Allure Test Ops](https://allure.autotests.cloud/project/627/dashboards) с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-250)  :
 
 ![JIRA](src/test/resources/img/jira_integration.PNG)
 
+### Хранение тест-кейсов в Allure TestOps
+Дашборд
+![Allure](src/test/resources/img/main_dashboard.PNG)
+Дашборд по видам тестов
+![Allure](src/test/resources/img/personal_dashboards.PNG)
+Запуски
+![Allure](src/test/resources/img/launches.PNG)
+Результат запуска 
+![Allure](src/test/resources/img/launch_results.PNG)
+Тест-кейсы
+![Allure](src/test/resources/img/tests.PNG)
+
+
+### Уведомления о завершении прогона автоетстов в Telegram
+![Telegram](src/test/resources/img/tgbot.PNG)
