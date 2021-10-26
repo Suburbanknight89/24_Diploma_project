@@ -23,12 +23,12 @@ UI
 
 API
 
-`   "Создание нового пользователя"
+    "Создание нового пользователя"
     "Запрос пользовательских данных"
     "Проверка ответа в блоке support.Url"
     "Неуспешное создание нового пользователя(негативный)"
     "Успешное создание нового пользователя(негативный)"
-    Получаем информацию о бургерах и их цене`
+
 
 ### Запуск тестов:
 
@@ -45,19 +45,18 @@ API
     gradle clean test -Ddriver=remote
 
 
-## Инструкция по запуску тестов
+### Запуск тестов
 
-Запуск тестов происходит через джобу в [Jenkins](https://jenkins.autotests.cloud/job/24_subu_vprok/)
+Запуск тестов происходит через джобу в [Jenkins](https://jenkins.autotests.cloud/job/24_subu_vprok/build?delay=0sec)
+
+### Параметры используемые при запуске тестов:
+![JENKINS_PARAMS](src/test/resources/img/Jenkins_params.PNG)
+
+### Статистика запусков:
 
 ![JENKINS_LAUNCH](src/test/resources/img/JENKINS_LAUNCH.PNG)
 
+### Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-250)  :
 
+![JIRA](src/test/resources/img/jira_integration.PNG)
 
-### Параметры используемые при запуске тестов:
-* browser (default chrome)
-* browserVersion (default 89.0)
-* browserSize (default 1920x1080)
-* browserMobileView (mobile device name, for example iPhone X)
-* remoteDriverUrl (url address from selenoid or grid)
-* videoStorage (url address where you should get video)
-* threads (number of threads)
