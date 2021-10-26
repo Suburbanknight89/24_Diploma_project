@@ -143,9 +143,9 @@ public class WebTests extends TestBase{
 		}
 
 	@Test
-	@DisplayName("vprok.ru tests")
+	@DisplayName("Проверка отправки смс кода при регистрации нового клиента")
 	@Layer("web")
-	@Story("Проверка отправки смс кода при регистрации нового клиетна")
+	@Story("vprok.ru tests")
 	@Microservice("Registration")
 	@Tags({@Tag("web")})
 	@Owner("ZaytsevE")
