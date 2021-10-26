@@ -79,3 +79,6 @@ API
 
 ### Уведомления о завершении прогона автоетстов в Telegram
 ![Telegram](src/test/resources/img/tgbot.PNG)
+
+### Видео о прохождении тестов
+![Selenoid](src/test/resources/img/381ea424ae9fd94501a1efc8ceff696b(1).gif)
