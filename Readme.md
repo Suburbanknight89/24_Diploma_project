@@ -64,12 +64,16 @@ API
 Дашборд
 ![Allure](src/test/resources/img/main_dashboard.PNG)
 Дашборд по видам тестов
+
 ![Allure](src/test/resources/img/personal_dashboards.PNG)
-Запуски
+Запуски 
+
 ![Allure](src/test/resources/img/launches.PNG)
 Результат запуска 
+
 ![Allure](src/test/resources/img/launch_results.PNG)
 Тест-кейсы
+
 ![Allure](src/test/resources/img/tests.PNG)
 
 
