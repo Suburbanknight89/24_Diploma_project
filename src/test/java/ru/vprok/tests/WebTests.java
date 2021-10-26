@@ -91,7 +91,7 @@ public class WebTests extends TestBase{
 		});
 
 		step("check the zoo corner contains feed in the headers", () -> {
-			$("#tns1-item1").shouldHave(text("корм"));
+			$(".xfnew-user-category__link").shouldHave(text("Лакомства для кошек"));
 		});
 	}
 
