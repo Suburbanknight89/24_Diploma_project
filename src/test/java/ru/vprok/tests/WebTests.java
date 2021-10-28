@@ -1,6 +1,7 @@
 package ru.vprok.tests;
 
-import com.codeborne.selenide.selector.ByText;
+import com.codeborne.selenide.ClickOptions;
+import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -8,15 +9,17 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import ru.vprok.allure.JiraIssue;
 import ru.vprok.allure.JiraIssues;
 import ru.vprok.allure.Layer;
 import ru.vprok.allure.Microservice;
 
+import static com.codeborne.selenide.ClickOptions.usingJavaScript;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class WebTests extends TestBase{
@@ -170,4 +173,68 @@ public class WebTests extends TestBase{
 			});
 
 	}
+	@Test
+	@DisplayName("Проверка фильтрации в категории  'Чай, кофе, сахар'")
+	@Layer("web")
+	@Story("vprok.ru tests")
+	@Microservice("Search")
+	@Tags({@Tag("web")})
+	@Owner("ZaytsevE")
+	@JiraIssues({@JiraIssue("HOMEWORK-250")})
+	void filterTeaTest() {
+		step("open https://www.vprok.ru/", () -> {
+			open("https://www.vprok.ru/");
+		});
+
+		step("search category tea,coffee,sugar in catalogue", () -> {
+			$(".xfnew-header__catalog-button").click();
+			$(By.linkText("Чай, кофе, сахар")).click();
+		});
+
+		step("select 'tea' category", () -> {
+			$(".selectboxit-arrow-container").click();
+		});
+
+		step("check that search result excludes coffee", () -> {
+			$(".selectboxit-option:nth-child(3)").shouldNotHave(text("кофе")).
+					shouldNotHave(text("какао")).shouldNotHave(text("сахар"));
+		});
+
+	}
+
+	@Test
+	@DisplayName("Положить товар в козину")
+	@Layer("web")
+	@Story("vprok.ru tests")
+	@Microservice("Search")
+	@Tags({@Tag("web")})
+	@Owner("ZaytsevE")
+	@JiraIssues({@JiraIssue("HOMEWORK-250")})
+	void basketTest() {
+		step("open https://www.vprok.ru/", () -> {
+			open("https://www.vprok.ru/");
+		});
+
+		step("search best for cats in zoo corner", () -> {
+			$(".xfnew-header__catalog-button").click();
+			$(By.linkText("Чай, кофе, сахар")).click();
+		});
+
+		step("search the product", () -> {
+			$(".xf-add-to-cart-btn__text").click();
+		});
+
+		step("choose delievery adress", () -> {
+			$(byName("address")).val("Московская область, городской округ Балашиха, деревня " +
+					"Русавкино-Романово, Гостиничная улица, 61");
+			$(byId("ui-id-31")).click();
+			$(".xfnew-button-filled").shouldHave(text("Сохранить адрес")).click();
+		});
+
+		step("check that search result excludes coffee", () -> {
+			$(".xfnew-header__cart-wrap").click();
+		});
+
+	}
 }
+
