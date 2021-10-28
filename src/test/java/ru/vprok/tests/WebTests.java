@@ -21,6 +21,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
+import static org.openqa.selenium.By.linkText;
 
 public class WebTests extends TestBase{
 
@@ -75,7 +76,7 @@ public class WebTests extends TestBase{
 
 		step("check that 'expensive if pack' lead to correct link", () -> {
 			$(".xfnew-header__catalog-button").click();
-					$(By.linkText("Упаковкой дешевле")).shouldHave(href("catalog/4924/upakovkoy-deshevle"));
+					$(linkText("Упаковкой дешевле")).shouldHave(href("catalog/4924/upakovkoy-deshevle"));
 		});
 	}
 
@@ -113,7 +114,7 @@ public class WebTests extends TestBase{
 
 		step("search best for cats in zoo corner", () -> {
 			$(".xfnew-header__catalog-button").click();
-			$(By.linkText("Зоотовары")).click();
+			$(linkText("Зоотовары")).click();
 		});
 
 			step("check that 'Хиты продаж' contains in search results", () -> {
@@ -188,7 +189,7 @@ public class WebTests extends TestBase{
 
 		step("search category tea,coffee,sugar in catalogue", () -> {
 			$(".xfnew-header__catalog-button").click();
-			$(By.linkText("Чай, кофе, сахар")).click();
+			$(linkText("Чай, кофе, сахар")).click();
 		});
 
 		step("select 'tea' category", () -> {
@@ -217,24 +218,30 @@ public class WebTests extends TestBase{
 
 		step("search best for cats in zoo corner", () -> {
 			$(".xfnew-header__catalog-button").click();
-			$(By.linkText("Чай, кофе, сахар")).click();
+			$(linkText("Чай, кофе, сахар")).click();
 		});
 
-		step("search the product", () -> {
+		step("buy the product", () -> {
 			$(".xf-add-to-cart-btn__text").click();
 		});
 
-		step("choose delievery adress", () -> {
+		step("choose delievery address", () -> {
+			Selenide.sleep(3000);
 			$(byName("address")).val("Московская область, городской округ Балашиха, деревня " +
 					"Русавкино-Романово, Гостиничная улица, 61");
-			$(byId("ui-id-31")).click();
-			$(".xfnew-button-filled").shouldHave(text("Сохранить адрес")).click();
+			$(".ui-menu-item-wrapper").click();
+			$(".ui-menu-item-wrapper").should(disappear);
+			Selenide.sleep(3000);
+			$(".xfnew-button-filled").click();
 		});
 
-		step("check that search result excludes coffee", () -> {
-			$(".xfnew-header__cart-wrap").click();
+		step("go to the basket", () -> {
+			$(".xfnew-header__cart-wrap",1).click();
 		});
 
+		step("check that selected prodict is in the basket", () -> {
+			$(".fo-product-card__wrap").shouldHave(text("Lavazza"));
+		});
 	}
 }
 
