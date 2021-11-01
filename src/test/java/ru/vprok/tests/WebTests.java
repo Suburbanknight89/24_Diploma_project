@@ -21,7 +21,7 @@ import static org.openqa.selenium.By.linkText;
 public class WebTests extends TestBase {
 
 	@Test
-	@DisplayName("Отображение 'Товар недели' на главной страниц")
+	@DisplayName("Отображение 'Товар недели' на главной странице")
 	@Layer("web")
 	@Story("vprok.ru tests")
 	@Microservice("Search")
