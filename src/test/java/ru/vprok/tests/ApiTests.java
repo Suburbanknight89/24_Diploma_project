@@ -3,11 +3,14 @@ package ru.vprok.tests;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.*;
 import ru.vprok.allure.JiraIssue;
 import ru.vprok.allure.JiraIssues;
 import ru.vprok.allure.Layer;
+import ru.vprok.config.application.App;
 
+import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.is;
@@ -19,6 +22,14 @@ public class ApiTests {
 		RestAssured.baseURI = "https://reqres.in";
 	}
 
+	public final static String USER = App.config.getRemoteWebUser();
+	public final static String TOKEN = App.config.getRemoteWebToken();
+	public final static String NAME = App.config.getRemoteWebName();
+	public final static String EMAIL = App.config.getRemoteWebEmail();
+	public final static String PASSWORD = App.config.getRemoteWebPassword();
+	public final static String NAMEFOTTEST2 = App.config.getRemoteWebNameForTest2();
+	public final static String JOB = App.config.getRemoteWebJob();
+
 	@Test
 	@DisplayName("reqres.in tests create user")
 	@Layer("api")
@@ -29,13 +40,13 @@ public class ApiTests {
 	void usersCreateNew() {
 		given()
 				.contentType(JSON)
-				.body("{\"name\": \"suburban\"," +
-						"\"job\": \"qa\"}")
+				.body("{\"name\": \"" + USER + "\"," +
+						"\"job\": \"" + JOB + "\" }")
 				.when()
-				.post("https://reqres.in/api/users")
+				.post(baseURI + "/api/users")
 				.then()
 				.statusCode(201)
-				.body("name", is("suburban"), "job", is("qa"))
+				.body("name", is(USER), "job", is(JOB))
 				.extract().response().asString();
 	}
 
@@ -50,11 +61,11 @@ public class ApiTests {
 		given()
 				.contentType(JSON)
 				.when()
-				.get("https://reqres.in/api/users/6")
+				.get(baseURI + "/api/users/6")
 				.then()
 				.statusCode(200)
-				.body("data.email", is("tracey.ramos@reqres.in"))
-				.body("data.last_name", is("Ramos"));
+				.body("data.email", is(EMAIL))
+				.body("data.last_name", is(NAMEFOTTEST2));
 	}
 
 	@Test
@@ -68,7 +79,7 @@ public class ApiTests {
 		given()
 				.contentType(JSON)
 				.when()
-				.get("https://reqres.in/api/users?page=3")
+				.get(baseURI + "/api/users?page=3")
 				.then()
 				.statusCode(200)
 				.body("support.url", is("https://reqres.in/#support-heading"));
@@ -84,11 +95,9 @@ public class ApiTests {
 	void unsuccesfullCreateUser() {
 		given()
 				.contentType(JSON)
-				.body("{\n" +
-						"    \"name\": \"morpheus\",\n" +
-						"}")
+				.body(NAME)
 				.when()
-				.post("https://reqres.in/api/users")
+				.post(baseURI + "/api/users")
 				.then()
 				.assertThat().statusCode(400);
 	}
@@ -103,14 +112,14 @@ public class ApiTests {
 	void registrationSuccessfulTest() {
 		given()
 				.contentType(JSON)
-				.body("{ \"email\": \"eve.holt@reqres.in\", " +
-						"\"password\": \"pistol\" }")
+				.body("{\"email\": \"" + EMAIL + "\"," +
+						"\"password\": \"" + PASSWORD + "\" }")
 				.when()
 				.post("/api/register")
 				.then()
 				.statusCode(200)
-				.body("id", is(4))
-				.body("token", is("QpwL5tke4Pnpja7X4"));
+				.body("id", is(6))
+				.body("token", is(TOKEN));
 	}
 }
 
