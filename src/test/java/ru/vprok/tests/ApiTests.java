@@ -3,12 +3,11 @@ package ru.vprok.tests;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.*;
 import ru.vprok.allure.JiraIssue;
 import ru.vprok.allure.JiraIssues;
 import ru.vprok.allure.Layer;
-import ru.vprok.config.application.App;
+import ru.vprok.config.api.Api;
 
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
@@ -22,13 +21,13 @@ public class ApiTests {
 		RestAssured.baseURI = "https://reqres.in";
 	}
 
-	public final static String USER = App.config.getRemoteWebUser();
-	public final static String TOKEN = App.config.getRemoteWebToken();
-	public final static String NAME = App.config.getRemoteWebName();
-	public final static String EMAIL = App.config.getRemoteWebEmail();
-	public final static String PASSWORD = App.config.getRemoteWebPassword();
-	public final static String NAMEFOTTEST2 = App.config.getRemoteWebNameForTest2();
-	public final static String JOB = App.config.getRemoteWebJob();
+	public final static String USER = Api.config.getRemoteWebUser();
+	public final static String TOKEN = Api.config.getRemoteWebToken();
+	public final static String NAME = Api.config.getRemoteWebName();
+	public final static String EMAIL = Api.config.getRemoteWebEmail();
+	public final static String PASSWORD = Api.config.getRemoteWebPassword();
+	public final static String NAMEFOTTEST2 = Api.config.getRemoteWebNameForTest2();
+	public final static String JOB = Api.config.getRemoteWebJob();
 
 	@Test
 	@DisplayName("reqres.in tests create user")
