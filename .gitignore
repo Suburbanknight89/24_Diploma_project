@@ -38,7 +38,6 @@ target/
 /gradlew
 /gradlew.bat
 .todo
-*.properties
 settings.gradle
 telegram.json
 allure-notifications-3.1.1.jar
